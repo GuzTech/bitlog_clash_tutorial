@@ -12,7 +12,7 @@ data SInstr = Push Value
             | PopPush Value
             deriving (Show)
 
-stack4 (mem, sp) instr = ((mem', sp'), o)
+stack5 (mem, sp) instr = ((mem', sp'), o)
   where
     (mem', sp') = case instr of
       Push val    -> (replace sp val mem, sp + 1)
@@ -27,7 +27,7 @@ topEntity
   :: (SMem, SP)
   -> SInstr
   -> ((SMem, SP), Value)
-topEntity = stack4
+topEntity = stack5
 
 -- Push 3 on the stack
 x = topEntity (repeat 0, 0) (Push 3)
