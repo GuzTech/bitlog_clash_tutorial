@@ -40,7 +40,10 @@ topEntity instr = mealy stack5 (repeat 0 :: SMem, 0 :: SP) instr
 instrs_vec = (Push 3 :> Push 5 :> PopPush 6 :> Pop :> Pop :> Nil)
 instrs = toList instrs_vec
 
--- Synchronous logic simulation and testbench generation
+-- Synchronous logic simulation
+test_sync = sampleN 5 $ simulate_lazy topEntity instrs
+
+-- Synchronous logic testbench generation
 
 --testInput :: Signal SInstr
 testInput = stimuliGenerator instrs_vec
@@ -48,7 +51,7 @@ testInput = stimuliGenerator instrs_vec
 --expectedOutput :: Signal Value -> Signal Bool
 expectedOutput = outputVerifier (0 :> 0 :> 5 :> 6 :> 3 :> Nil)
 
-test_sync = sampleN 5 $ expectedOutput $ topEntity testInput
+test_sync_tb = sampleN 5 $ expectedOutput $ topEntity testInput
 
 -- Combinatorial logic simulation
 
