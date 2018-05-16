@@ -5,4 +5,4 @@ This repository contains all the code used in the [Clash](http://www.clash-lang.
 There is a folder called "part_X" for each part of the tutorial. Below is a list of links to the parts:
 
 1. [Part 1 - Basic introduction to combinatorial logic](https://bitlog.it/hardware/a-basic-introduction-to-clash-for-fpga-development/)
-2. [Part 2 - Bug fixes, much cleaner code, simulation, and synchronous logic](https://bitlog.it/hardware/a-basic-introduction-to-clash-for-fpga-development-part-2/)
+2. [Part 2 - Bug fixes, much cleaner code, simulation, synchronous logic, and test benches](https://bitlog.it/hardware/a-basic-introduction-to-clash-for-fpga-development-part-2/)
